@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <aside>
+            <img src="img/MY-STEM-JOURNAL-logo (2).png" alt="My STEM Journal Logo">
+        </aside>
+
+        <div class="main-content">
+            <header>
+                <h1>Hello there!</h1>
+                <p id="current-date"></p>
+            </header>
+
+            <div class="search">
+                <button class="add-btn"><a href="#modalbox">Add</a></button>
+                <input type="text" placeholder="Search..."><br>
+                <button class="search-btn"><img src="img/search_400dp_93ACFE_FILL0_wght400_GRAD200_opsz48.png" width="20px"></button>
+            </div>
+
+            <div id="modalbox" class="modal">
+                <div class="modal-content">
+                    <a href="#" class="modalclose">&times;</a>
+                    <h3>Add a new goal!</h3>
+                    <form id="goal-form">
+                        <label for="goal-title">Goal Title:</label>
+                        <input type="text" id="goal-title" name="goal-title" placeholder="Enter goal title" required>
+
+                        <label for="goal-desc">Description:</label>
+                        <textarea id="goal-desc" name="goal-desc" placeholder="Short description..."></textarea>
+
+                        <label for="goal-color">Card Color:</label>
+                        <div class="color-options">
+                            <label>
+                                <input type="radio" name="goal-color" value="#FFBBF8" checked>
+                                <span class="color-circle" style="background:#FFBBF8;"></span>
+                            </label>
+                            <label>
+                                <input type="radio" name="goal-color" value="#F5FFCA">
+                                <span class="color-circle" style="background:#F5FFCA;"></span>
+                            </label>
+                            <label>
+                                <input type="radio" name="goal-color" value="#CDC4FF">
+                                <span class="color-circle" style="background:#CDC4FF;"></span>
+                            </label>
+                            <label>
+                                <input type="radio" name="goal-color" value="#CCD8FF">
+                                <span class="color-circle" style="background:#CCD8FF;"></span>
+                            </label>
+                            </div>
+
+                        <button type="submit">Create Goal</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="goals">
+                <div class="to-do">
+                    <h2>To Do</h2>
+                    <div class="cards-container"></div>
+                </div>
+
+                <div class="in-process">
+                    <h2>In Process</h2>
+                </div>
+
+                <div class="ready">
+                    <h2>Ready</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modalclose">&times;</a>
+            <h3 id="detail-title"></h3>
+            <p id="detail-desc"></p>
+            <div id="add-task-section">
+                <input type="text" id="new-task-input" placeholder="Add a new task...">
+                <button id="add-task-btn">Add Task</button>
+            </div>
+            <div id="todo-container"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
